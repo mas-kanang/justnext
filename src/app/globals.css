@@ -22,3 +22,55 @@ body {
       transparent,
       rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
+
+@layer base {
+  .tengah {
+    @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+  }
+
+  .tengah-atas {
+    @apply relative mx-40 mt-7;
+  }
+
+  .tombol-save {
+    @apply bg-blue-500 hover:bg-blue-700 text-white hover:cursor-pointer font-bold py-1 px-2 rounded text-center;
+  }
+
+  .tombol-delete {
+    @apply bg-red-500 hover:bg-red-700 text-white hover:cursor-pointer font-bold py-1 px-2 rounded text-center;
+  }
+
+  .tombol-reset {
+    @apply bg-gray-500 hover:bg-gray-700 text-white hover:cursor-pointer font-bold py-1 px-2 rounded text-center;
+  }
+}
+
+@layer components {
+  .judul-tabel {
+    @apply text-left font-medium text-gray-800 uppercase tracking-wide py-3 px-6 border border-collapse;
+  }
+
+  .data-tabel {
+    @apply text-left px-6 py-4 text-gray-400 whitespace-normal border border-collapse;
+  }
+
+  .text-tabel {
+    @apply text-sm text-gray-500;
+  }
+
+  .tautan {
+    @apply text-indigo-600 hover:text-indigo-800 hover:cursor-pointer;
+  }
+
+  .modal-popup {
+    @apply fixed inset-0 z-10 overflow-y-auto;
+  }
+
+  .modal-child {
+    @apply inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-md;
+  }
+
+  .modal-dialog-title {
+    @apply text-lg font-medium leading-6 text-gray-900;
+  }
+}

@@ -18,9 +18,9 @@ function DaftarPengajuan() {
   console.log(isOpen);
   return (
     <main className="container mx-auto my-8">
-      <section>
-        <MyDialog openkah={isOpen} openkan={() => setIsOpen(false)} />
-      </section>
+
+      <MyDialog openkah={isOpen} openkan={() => setIsOpen(false)} />
+
       <section className="flex gap-1 shadow border-b">
         <Uic />
         <table className="flex-1  border border-collapse bg-white">
