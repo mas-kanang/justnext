@@ -4,11 +4,12 @@ import { Fragment, useState } from 'react'
 
 interface Dialog {
   isOpen: boolean;
+  params: string;
   closeModal: (params: any) => void;
   openModal: (params: any) => void;
 }
 
-export default function MyModal({ closeModal, openModal, isOpen }: Dialog) {
+export default function MyModal({ closeModal, openModal, isOpen, params }: Dialog) {
   return (
     <>
       {/* <div className="fixed inset-0 flex items-center justify-center">
@@ -36,7 +37,7 @@ export default function MyModal({ closeModal, openModal, isOpen }: Dialog) {
           </Transition.Child>
 
           <div className="fixed inset-0 overflow-y-auto">
-            <div className="flex min-h-full items-center justify-center p-4 text-center">
+            <div className="flex min-h-full items-start justify-center p-20 text-center">
               <Transition.Child
                 as={Fragment}
                 enter="ease-out duration-300"
@@ -46,17 +47,23 @@ export default function MyModal({ closeModal, openModal, isOpen }: Dialog) {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                <Dialog.Panel className="w-full max-w-3xl transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
                   <Dialog.Title
                     as="h3"
-                    className="text-lg font-medium leading-6 text-gray-900"
+                    className="text-lg text-center font-medium leading-6 text-gray-900"
                   >
-                    Payment successful
+                    {params}
                   </Dialog.Title>
                   <div className="mt-2">
                     <p className="text-sm text-gray-500">
                       Your payment has been successfully submitted. We’ve sent
                       you an email with all of the details of your order.
+                      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat quae totam repudiandae?
+                      Similique natus magni, ipsa molestiae consectetur a earum eos dignissimos nihil aspernatur facilis,
+                      reprehenderit ullam veniam quisquam perferendis?
+                      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus ducimus eum consequuntur neque assumenda,
+                      quo corrupti quasi nemo suscipit vitae,
+                      odio nobis error quis molestiae molestias temporibus repellendus accusantium blanditiis.
                     </p>
                   </div>
 
