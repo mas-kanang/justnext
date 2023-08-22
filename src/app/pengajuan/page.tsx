@@ -1,9 +1,9 @@
-'use client';
+'use client'
 
 import { services } from '../__mocks__/services';
-import { useState } from 'react';
-import MyDialog from './dialog';
 import Uic from './uic';
+import MyModal from './dialog';
+import { useState } from 'react';
 
 interface Datas {
   serviceName: string;
@@ -14,12 +14,18 @@ interface Datas {
 const Datas = services.data;
 
 function DaftarPengajuan() {
-  let [isOpen, setIsOpen] = useState(false);
-  console.log(isOpen);
+  let [isOpen, setIsOpen] = useState(true)
+
+  function closeModal(params: any) {
+    setIsOpen(false)
+  }
+
+  function openModal(params: any) {
+    setIsOpen(true)
+  }
   return (
     <main className="container mx-auto my-8">
-
-      <MyDialog openkah={isOpen} openkan={() => setIsOpen(false)} />
+      <MyModal closeModal={closeModal} openModal={openModal} isOpen={isOpen} />
 
       <section className="flex gap-1 shadow border-b">
         <Uic />
@@ -54,10 +60,10 @@ function DaftarPengajuan() {
                     <p className=" text-tabel">{data.serviceSLA}</p>
                   </td>
                   <td className=" data-tabel max-h-0">
-                    <a className=" rounded-lg bg-lime-500 text-center my-1 text-black p-1 " onClick={() => setIsOpen(true)}>Persyaratan</a>
+                    <div className=" rounded-lg bg-lime-500 text-center my-1 text-black p-1 " onClick={openModal}>Persyaratan</div>
                   </td>
                   <td className=" data-tabel max-h-0">
-                    <div className=" rounded-lg bg-orange-600 text-center my-1 text-black p-1 ">Ajukan Permohonan</div>
+                    <div className=" rounded-lg bg-orange-600 text-center my-1 text-black p-1 " onClick={openModal}>Ajukan Permohonan</div>
                   </td>
                 </tr>
               );
