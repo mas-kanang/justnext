@@ -10,9 +10,9 @@ const Datas = uic;
 
 function Uic() {
   return (
-    <div className="p-4 text-center flex-none bg-slate-700">
+    <div className="p-4 text-center flex-none bg-sky-800 text-white">
 
-      <div className="border-b-2">Kategori</div>
+      <div className="border-b-2 font-bold">Kategori</div>
 
       {Datas.map((data, i) => {
         return (

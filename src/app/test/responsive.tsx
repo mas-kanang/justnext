@@ -2,7 +2,7 @@
 
 export default function Responsive() {
   return (
-    <main className=" min-h-screen border border-blue-400 flex flex-row">
+    <main className=" min-h-screen flex flex-row">
       <div className="m-4 text-center flex-none">
         <div className="border-b-2">Kategori</div>
         <div className="border-b-2">PDAD</div>

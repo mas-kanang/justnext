@@ -13,7 +13,7 @@ export default function Layout(props: { children: any; pageTitle: any; }) {
       </Head>
       <div className="min-h-screen flex flex-col ">
         <Header />
-        <div className=" min-h-screen flex-1 mt-10 bg-slate-100  ">{children}</div>
+        <div className=" flex-1 mt-10 bg-slate:100 dark:bg-blue-950 ">{children}</div>
         <Footer />
       </div>
     </div>

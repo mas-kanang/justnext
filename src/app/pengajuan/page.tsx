@@ -29,9 +29,9 @@ function DaftarPengajuan() {
   return (
     <>
       <MyModal closeModal={closeModal} openModal={openModal} isOpen={isOpen} params={params} />
-      <main className="min-h-full  flex flex-row">
+      <main className=" flex flex-row">
         <Uic />
-        <div className="bg-slate-800 grow overflow-auto">
+        <div className="grow overflow-auto">
           <div className="grid grid-cols-1 md:grid-cols-12 text-center m-4 gap-2 border-b">
             <div className=" ">No.</div>
             <div className="  md:col-span-6">Jenis Layanan</div>
