@@ -21,4 +21,14 @@ export const uic = [
     name: 'Manifes',
     fullName: 'Seksi Administrasi Manifes',
   },
+  {
+    id: uuid(),
+    name: 'P2',
+    fullName: 'Seksi Penindakan dan Penyidikan',
+  },
+  {
+    id: uuid(),
+    name: 'PKC',
+    fullName: 'Seksi Pelayanan Kepabeanan dan Cukai',
+  },
 ];
