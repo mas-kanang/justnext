@@ -8,33 +8,19 @@ interface Datas {
 
 const Datas = uic;
 
-function Uic () {
+function Uic() {
   return (
-        <table className="flex-none ">
-          <thead className=" bg-white ">
-            <tr className='border border-collapse'>
-              <th className=" judul-tabel">Kategori</th>
-            </tr>
-          </thead>
-          <tbody className=" bg-white">
-            {Datas.length == 0 && (
-              <tr>
-                <td className=" data-tabel">
-                  <p className=" text-tabel">Data tidak ditemukan</p>
-                </td>
-              </tr>
-            )}
-            {Datas.map((data, i) => {
-              return (
-                <tr key={i} className='border border-collapse'>
-                  <td className=" data-tabel">
-                    <p className=" text-tabel">{data.name}</p>
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+    <div className="p-4 text-center flex-none bg-slate-700">
+
+      <div className="border-b-2">Kategori</div>
+
+      {Datas.map((data, i) => {
+        return (
+          <div className="border-b-2" key={i}>{data.name}</div>
+        );
+      })}
+
+    </div>
   );
 }
 
