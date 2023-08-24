@@ -8,14 +8,9 @@ export default function Header() {
           <Link href="/">Home</Link>
         </li>
         <li>
-          <Link href="/card">Card</Link>
+          <Link href="/test">Demo</Link>
         </li>
-        <li>
-          <Link href="/fixed">Fixed</Link>
-        </li>
-        <li>
-          <Link href="/grid">Grid</Link>
-        </li>
+
       </ul>
     </header>
   );

@@ -44,7 +44,7 @@ function DaftarPengajuan() {
       <main className=" flex flex-row">
         <Uic setFilters={kategory} />
         <div className="grow overflow-auto">
-          <div className="grid grid-cols-1 md:grid-cols-12 text-center m-4 gap-2 border-b">
+          <div className="grid grid-cols-1 md:grid-cols-12 text-center m-4 gap-2 border-b bg-sky-800 text-white">
             <div className=" ">No.</div>
             <div className="  md:col-span-6">Jenis Layanan</div>
             <div className="  md:col-span-2">SLA</div>
@@ -53,7 +53,7 @@ function DaftarPengajuan() {
           </div>
           {Datas.map((data, i) => {
             return (
-              <div key={i} className="grid grid-cols-1 md:grid-cols-12 text-center m-4 gap-2 border-b">
+              <div key={i} className="grid grid-cols-1 md:grid-cols-12 text-center m-4 gap-2 border-b-2 border-blue-950">
                 <div >{i + 1}</div>
                 <div className=" md:col-span-6 md:text-left md:pl-2">{data.serviceName}</div>
                 <div className=" md:col-span-2">{data.serviceSLA}</div>
