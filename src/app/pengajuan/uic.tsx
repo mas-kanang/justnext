@@ -12,33 +12,20 @@ interface Filters {
 
 const Datas = uic;
 
+
 function Uic({ setFilters }: Filters) {
   return (
-    <table className="fixed">
-      <thead className=" bg-white ">
-        <tr className='border border-collapse'>
-          <th className=" judul-tabel">Kategori</th>
-        </tr>
-      </thead>
-      <tbody className=" bg-white">
-        {Datas.length == 0 && (
-          <tr>
-            <td className=" data-tabel">
-              <p className=" text-tabel">Data tidak ditemukan</p>
-            </td>
-          </tr>
-        )}
-        {Datas.map((data, i) => {
-          return (
-            <tr key={i} className='border border-collapse' >
-              <td className=" data-tabel">
-                <p className=" text-tabel" onClick={() => setFilters(`${data.name}`)}>{data.name}</p>
-              </td>
-            </tr>
-          );
-        })}
-      </tbody>
-    </table>
+    <div className="p-4 text-center flex-none bg-sky-800 text-white">
+
+      <div className="border-b-2 font-bold">Kategori</div>
+
+      {Datas.map((data, i) => {
+        return (
+          <div className="border-b-2" key={i} onClick={() => setFilters(`${data.name}`)}>{data.name}</div>
+        );
+      })}
+
+    </div>
   );
 }
 

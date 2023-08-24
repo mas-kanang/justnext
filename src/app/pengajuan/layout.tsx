@@ -6,14 +6,14 @@ import Header from "./header";
 export default function Layout(props: { children: any; pageTitle: any; }) {
   const { children, pageTitle } = props;
   return (
-    <div>
+    <div className="min-h-screen">
       <Head>
         <title>Maskanang | {pageTitle}</title>
         <meta name="description" content="maskanang website" />
       </Head>
-      <div className="flex flex-col min-h-screen ">
+      <div className="min-h-screen flex flex-col ">
         <Header />
-        <div className="flex-1 mt-10 bg-slate-100  ">{children}</div>
+        <div className=" flex-1 md:mt-10 bg-slate:100 dark:bg-blue-950 ">{children}</div>
         <Footer />
       </div>
     </div>

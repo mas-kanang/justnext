@@ -39,54 +39,33 @@ function DaftarPengajuan() {
   }
 
   return (
-    <main className="container mx-auto my-8">
+    <>
       <MyModal closeModal={closeModal} openModal={openModal} isOpen={isOpen} params={params} />
-
-      <section className=" border-b">
+      <main className=" flex flex-row">
         <Uic setFilters={kategory} />
-        <table className="fixed ml-40 border border-collapse bg-white">
-          <thead >
-            <tr className='border border-collapse'>
-              <th className=" judul-tabel">Nomor</th>
-              <th className=" judul-tabel w-96">Nama Permohonan</th>
-              <th className=" judul-tabel">SLA</th>
-              <th className=" judul-tabel">Persyaratan</th>
-              <th className=" judul-tabel">Permohonan</th>
-            </tr>
-          </thead>
-          <tbody>
-            {Datas.length == 0 && (
-              <tr>
-                <td className=" data-tabel">
-                  <p className=" text-tabel">Data tidak ditemukan</p>
-                </td>
-              </tr>
-            )}
-            {Datas.map((data, i) => {
-              return (
-                <tr key={i} className='border border-collapse '>
-                  <td className=" data-tabel">
-                    <p className=" text-tabel">{i + 1}</p>
-                  </td>
-                  <td className=" data-tabel w-2/5" >
-                    <p className=" text-tabel">{data.serviceName}</p>
-                  </td>
-                  <td className=" data-tabel">
-                    <p className=" text-tabel">{data.serviceSLA}</p>
-                  </td>
-                  <td className=" data-tabel max-h-0">
-                    <div className=" rounded-lg bg-lime-500 text-center my-1 text-black p-1 " onClick={() => openModal(`Persyaratan ${data.serviceName}`)}>Persyaratan</div>
-                  </td>
-                  <td className=" data-tabel max-h-0">
-                    <div className=" rounded-lg bg-orange-600 text-center my-1 text-black p-1 " onClick={() => openModal(`Pengajuan ${data.serviceName}`)}>Ajukan Permohonan</div>
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
-      </section>
-    </main>
+        <div className="grow overflow-auto">
+          <div className="grid grid-cols-1 md:grid-cols-12 text-center m-4 gap-2 border-b">
+            <div className=" ">No.</div>
+            <div className="  md:col-span-6">Jenis Layanan</div>
+            <div className="  md:col-span-2">SLA</div>
+            <div className="  md:col-span-2">Persyaratan</div>
+            <div className=" ">Ajukan</div>
+          </div>
+          {Datas.map((data, i) => {
+            return (
+              <div key={i} className="grid grid-cols-1 md:grid-cols-12 text-center m-4 gap-2 border-b">
+                <div >{i + 1}</div>
+                <div className=" md:col-span-6 md:text-left md:pl-2">{data.serviceName}</div>
+                <div className=" md:col-span-2">{data.serviceSLA}</div>
+                <div className=" md:col-span-2" onClick={() => openModal(`Persyaratan ${data.serviceName}`)}>Persyaratan</div>
+                <div onClick={() => openModal(`Pengajuan ${data.serviceName}`)}>Ajukan</div>
+              </div>
+            );
+          })}
+        </div>
+      </main>
+    </>
+
   );
 }
 
